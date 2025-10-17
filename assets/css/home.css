@@ -1,0 +1,145 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* --- New Logo Styling --- */
+
+/* Style the logo container */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem; /* Adjust size as needed */
+    font-weight: 600;
+}
+
+/* Style the icon (the scale symbol) */
+.logo i {
+    color: #3b82f6;      /* This sets the icon color to blue */
+    margin-right: 10px; /* Adds a small space between the icon and the text */
+}
+
+/* Style the text ("LegalAid Pro") */
+.logo span {
+    color: #1e293b;      /* This sets the text color to a dark charcoal */
+}
+
+.navbar nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+
+.signin-btn {
+    padding: 5px 15px;
+    border: 1px solid #333;
+    background: none;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.hero h2 {
+    font-size: 36px;
+    color: #1E65F3;
+    margin-top: 5px;
+}
+
+.hero p {
+    margin: 15px auto;
+    max-width: 600px;
+    color: #555;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.primary-btn {
+    background: #1E65F3;
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.light-btn {
+    background: #f3f3f3;
+    border: none;
+    padding: 12px 25px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+}
+
+.feature-box {
+    text-align: center;
+    width: 22%;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 6px;
+}
+
+.feature-box i {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.feature-box h3 {
+    margin-top: 5px;
+    font-size: 18px;
+}
+
+.feature-box p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    background: #1E65F3;
+    color: white;
+    padding: 40px 0;
+}
+
+.stat-box {
+    text-align: center;
+}
+
+.stat-box h2 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}

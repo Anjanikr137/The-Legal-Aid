@@ -1,0 +1,111 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* --- New Logo Styling --- */
+
+/* This styles the main logo container */
+.logo {
+    display: flex;         /* Aligns icon and text side-by-side */
+    align-items: center;   /* Vertically centers the icon and text */
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* This styles ONLY the icon */
+.logo i {
+    color: #3b82f6;        /* Sets the icon color to blue */
+    margin-right: 10px;    /* Adds space between the icon and text */
+}
+
+/* This styles ONLY the text */
+.logo span {
+    color: #1e293b;       /* Sets the text color to a dark charcoal */
+}
+.back-home {
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+/* Main Content */
+main {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Case Lookup Section */
+.case-lookup {
+  background: #f8f8f8;
+  padding: 25px;
+  max-width: 600px;
+  margin: 0 auto 40px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.case-lookup h2 {
+  margin-bottom: 8px;
+}
+
+.case-lookup p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.track-btn {
+  width: 100%;
+  padding: 12px;
+  background: #4e5cfb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.track-btn:hover {
+  background: #3b48d8;
+}
+

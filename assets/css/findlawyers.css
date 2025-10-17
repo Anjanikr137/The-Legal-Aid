@@ -1,0 +1,152 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    border-bottom: 1px solid #ddd;
+}
+/* --- New Logo Styling --- */
+
+/* Style the logo container */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem; /* Adjust size as needed */
+    font-weight: 600;
+}
+
+/* Style the icon (the scale symbol) */
+.logo i {
+    color: #3b82f6;      /* This sets the icon color to blue */
+    margin-right: 10px; /* Adds a small space between the icon and the text */
+}
+
+/* Style the text ("LegalAid Pro") */
+.logo span {
+    color: #1e293b;      /* This sets the text color to a dark charcoal */
+}
+.navbar nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+.signin-btn {
+    padding: 5px 15px;
+    border: 1px solid #333;
+    background: none;
+    cursor: pointer;
+}
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    padding: 40px 20px;
+}
+.page-header h1 {
+    font-size: 28px;
+}
+.page-header p {
+    margin-top: 10px;
+    color: #555;
+}
+
+/* Search and Filter */
+.search-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+}
+.search-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 70%;
+}
+.search-box input {
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    width: 100%;
+}
+.filter-btn {
+    background: #f4f4f4;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Lawyer Cards */
+.lawyer-cards {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 40px;
+}
+.card {
+    width: 28%;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+.card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.card h3 {
+    margin: 10px 0 5px;
+}
+.specialization {
+    color: #1E65F3;
+    text-decoration: none;
+    font-size: 14px;
+}
+.card p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+.hire-btn {
+    background: #1E65F3;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Bottom Section */
+.submit-case {
+    text-align: center;
+    background: #f4f4f4;
+    padding: 40px 20px;
+}
+.submit-case h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.submit-case p {
+    color: #555;
+    margin-bottom: 20px;
+}
+.submit-btn {
+    background: #1E65F3;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+}

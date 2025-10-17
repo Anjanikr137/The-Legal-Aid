@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LegalAid Pro Dashboard</title>
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/Dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <header class="dashboard-header">
+            <div class="logo">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <h1>LegalAid Pro</h1>
+            </div>
+            <div class="user-profile">
+                <i class="fa-regular fa-bell"></i>
+                <div class="user-info">
+                    <span>John Smith</span>
+                    <img src="https://i.pravatar.cc/40?u=johnsmith" alt="User Avatar">
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            
+            <div class="left-column">
+                <div class="greeting">
+                    <h2>Good Morning, John</h2>
+                </div>
+
+                <div class="main-card">
+                    <h3>Case Strategy Meeting</h3>
+                    <p>Starts in 3 hours</p>
+                    <div class="meeting-details">
+                        <span><i class="fa-solid fa-user"></i> with Emily Rodriguez</span>
+                        <span><i class="fa-solid fa-location-dot"></i> In-Person</span>
+                    </div>
+                    <button class="join-btn">Join Meeting</button>
+                </div>
+
+                <div class="cases-section">
+                    <h4>Active Cases</h4>
+                    <div class="cases-grid">
+                        <div class="case-card">
+                            <p>Johnson v. Acme Corp.</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 60%;"></div>
+                            </div>
+                            <span>60%</span>
+                            <img src="https://i.pravatar.cc/30?u=lawyer1" alt="Lawyer Avatar">
+                        </div>
+                        <div class="case-card">
+                            <p>Johnson v. DataCo</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 60%;"></div>
+                            </div>
+                            <span>60%</span>
+                            <img src="https://i.pravatar.cc/30?u=lawyer2" alt="Lawyer Avatar">
+                        </div>
+                        <div class="case-card">
+                            <p>Smith v. DataCo</p>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 60%;"></div>
+                            </div>
+                            <span>60%</span>
+                            <img src="https://i.pravatar.cc/30?u=lawyer3" alt="Lawyer Avatar">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="widgets-section">
+                    <div class="widget">
+                        <i class="fa-regular fa-calendar-days icon-blue"></i>
+                        <div class="widget-info">
+                            <span class="widget-number">2</span>
+                            <span class="widget-label">Upcoming Meetings</span>
+                        </div>
+                        <i class="fa-solid fa-calendar-week icon-calendar"></i>
+                    </div>
+                    <div class="widget">
+                        <i class="fa-solid fa-users icon-blue"></i>
+                        <div class="widget-info">
+                            <span class="widget-number">3</span>
+                            <span class="widget-label">Hired Lawyers</span>
+                        </div>
+                        <div class="avatar-stack">
+                            <img src="https://i.pravatar.cc/24?u=lawyer1" alt="Avatar 1">
+                            <img src="https://i.pravatar.cc/24?u=lawyer2" alt="Avatar 2">
+                            <img src="https://i.pravatar.cc/24?u=lawyer3" alt="Avatar 3">
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <i class="fa-regular fa-file-lines icon-blue"></i>
+                        <div class="widget-info">
+                            <span class="widget-number">1</span>
+                            <span class="widget-label">Pending Documents</span>
+                        </div>
+                        <a href="#" class="widget-link">Review & Sign Contract.pdf</a>
+                    </div>
+                </div>
+
+                <div class="schedule-section">
+                    <div class="schedule-header">
+                        <h4>Full Schedule</h4>
+                        <button class="schedule-btn">+ Schedule</button>
+                    </div>
+                    <div class="appointment-item">
+                        <div class="date-tag">FEB 05</div>
+                        <div class="appointment-details">
+                            <p class="time">10:00 AM - Case Strategy Meeting</p>
+                            <p class="person">Michael Chen</p>
+                        </div>
+                        <button class="reschedule-btn">Reschedule</button>
+                    </div>
+                    <div class="appointment-item">
+                        <div class="date-tag">FEB 08</div>
+                        <div class="appointment-details">
+                            <p class="time">2:00 PM - Document Review Session</p>
+                            <p class="person">Michael Chen • Video Call</p>
+                        </div>
+                        <button class="reschedule-btn">Reschedule</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

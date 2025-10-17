@@ -1,0 +1,147 @@
+/* Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* Navbar */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+/* --- New Logo Styling --- */
+
+/* Style the logo container */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem; /* Adjust size as needed */
+    font-weight: 600;
+}
+
+/* Style the icon (the scale symbol) */
+.logo i {
+    color: #3b82f6;      /* This sets the icon color to blue */
+    margin-right: 10px; /* Adds a small space between the icon and the text */
+}
+
+/* Style the text ("LegalAid Pro") */
+.logo span {
+    color: #1e293b;      /* This sets the text color to a dark charcoal */
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: black;
+}
+
+nav a.signin-btn {
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+/* Contact Section */
+main {
+  padding: 30px;
+  text-align: center;
+}
+
+main h1 {
+  font-size: 32px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Layout */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Left form */
+.contact-form {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 350px;
+  text-align: left;
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact-form textarea {
+  height: 80px;
+  resize: none;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #2a8af7;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #1f6fcc;
+}
+
+/* Right info boxes */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 300px;
+}
+
+.info-box {
+  background: #f1f1f1;
+  padding: 20px;
+  border-radius: 6px;
+  text-align: left;
+}
+
+.info-box h3 {
+  margin: 0 0 10px;
+}
+
+.info-box p {
+  margin: 0;
+  color: #444;
+}

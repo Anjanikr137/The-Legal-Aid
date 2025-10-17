@@ -1,0 +1,133 @@
+/* --- Basic Setup and Global Styles --- */
+
+/* Import the Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5; /* Light grey background */
+    color: #333;
+    /* Center the main container on the page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem; /* Add some space on the sides for smaller screens */
+}
+
+/* --- Header & Logo --- */
+header {
+    margin-bottom: 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.logo i {
+    color: #3b82f6; /* Blue color for the icon */
+    margin-right: 0.75rem;
+}
+
+/* --- Hero Section (Main Content) --- */
+.hero-section {
+    display: flex; /* Creates the two-column layout */
+    align-items: center; /* Vertically aligns text and image */
+    gap: 2rem; /* Space between the text and image columns */
+}
+
+.hero-text {
+    flex: 1; /* Allows the text column to take up available space */
+}
+
+.hero-image {
+    flex: 1; /* Allows the image column to take up available space */
+}
+
+/* --- Text and Button Styling --- */
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.text-blue {
+    color: #3b82f6; /* Blue color for specific words */
+}
+
+.hero-text p {
+    font-size: 1rem;
+    color: #64748b; /* Grey color for the paragraph */
+    margin-bottom: 2rem;
+    max-width: 500px; /* Limits the width of the paragraph */
+}
+
+.cta-button {
+    background-color: #3b82f6;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.cta-button:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+}
+
+.sub-text {
+    font-size: 0.8rem !important; /* Overrides the general 'p' style */
+    color: #94a3b8 !important; /* Lighter grey for this text */
+    margin-top: 1rem;
+}
+
+/* --- Image Styling --- */
+.hero-image img {
+    max-width: 100%; /* Makes the image responsive */
+    height: auto;
+    display: block; /* Removes extra space below the image */
+}
+
+/* --- Divider and Features Section --- */
+.divider {
+    border: none;
+    height: 1px;
+    background-color: #e2e8f0; /* Light grey line */
+    margin: 2.5rem 0;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around; /* Spreads out the feature items evenly */
+    align-items: center;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between icon and text */
+    color: #64748b;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.feature-item i {
+    color: #3b82f6;
+    font-size: 1.2rem;
+}
+
