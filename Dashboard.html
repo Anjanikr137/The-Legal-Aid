@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- This is your existing CSS file, it will style our new cards -->
     <link rel="stylesheet" href="assets/css/Dashboard.css">
 </head>
 <body>
@@ -49,36 +50,21 @@
 
                 <div class="cases-section">
                     <h4>Active Cases</h4>
-                    <div class="cases-grid">
-                        <div class="case-card">
-                            <p>Johnson v. Acme Corp.</p>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 60%;"></div>
-                            </div>
-                            <span>60%</span>
-                            <img src="https://i.pravatar.cc/30?u=lawyer1" alt="Lawyer Avatar">
-                        </div>
-                        <div class="case-card">
-                            <p>Johnson v. DataCo</p>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 60%;"></div>
-                            </div>
-                            <span>60%</span>
-                            <img src="https://i.pravatar.cc/30?u=lawyer2" alt="Lawyer Avatar">
-                        </div>
-                        <div class="case-card">
-                            <p>Smith v. DataCo</p>
-                            <div class="progress-bar">
-                                <div class="progress" style="width: 60%;"></div>
-                            </div>
-                            <span>60%</span>
-                            <img src="https://i.pravatar.cc/30?u=lawyer3" alt="Lawyer Avatar">
-                        </div>
+                    
+                    <!-- 
+                      CHANGE 1:
+                      - I added id="cases-grid-container" so the script can find this div.
+                      - I removed the 3 hard-coded <div class="case-card">...</div> divs.
+                      - Our JavaScript will now create and add them automatically.
+                    -->
+                    <div class="cases-grid" id="cases-grid-container">
+                        <!-- Case cards will be dynamically added here by our script -->
                     </div>
                 </div>
             </div>
 
             <div class="right-column">
+                <!-- The entire right column remains unchanged -->
                 <div class="widgets-section">
                     <div class="widget">
                         <i class="fa-regular fa-calendar-days icon-blue"></i>
@@ -136,5 +122,87 @@
         </main>
     </div>
 
+    <!-- 
+      CHANGE 2:
+      - Added this <script> block.
+      - This is your OOPS task, based 100% on your "Student" class example.
+    -->
+    <script>
+        // 1. Define the LegalCase class (like the Student class)
+        class LegalCase {
+            // The constructor runs when we create a 'new LegalCase'
+            constructor(title, progress, avatarUrl) {
+                this.title = title;         // like 'name'
+                this.progress = progress;     // like 'm1'
+                this.avatarUrl = avatarUrl; // like 'm2'
+            }
+
+            // You can add methods here like your result() method if needed,
+            // but for this card, we just need the properties.
+        }
+
+        // 2. Create multiple case objects (like ob, ob1, ob2)
+        let case1 = new LegalCase("Johnson v. Acme Corp.", 60, "https://i.pravatar.cc/30?u=lawyer1");
+        let case2 = new LegalCase("Smith v. DataCo", 30, "https://i.pravatar.cc/30?u=lawyer2");
+        let case3 = new LegalCase("Rodriguez v. Hooli", 90, "https://i.pravatar.cc/30?u=lawyer3");
+        let case4 = new LegalCase("Chen v. Stark Ind.", 20, "https://i.pravatar.cc/30?u=lawyer4");
+
+        // 3. Store them in an array (like obj_arr)
+        let case_array = [case1, case2, case3, case4];
+
+        // 4. Access the HTML element to put our cards in
+        // We use getElementById (from your Week 1 topics)
+        let container = document.getElementById("cases-grid-container");
+
+        // 5. Use a 'for...of' loop to add a card for each case
+        for (let legalCase of case_array) {
+            
+            // 6. Create elements using document.createElement() (Week 3)
+            // We are building this structure:
+            // <div class="case-card">
+            //   <p>...</p>
+            //   <div class="progress-bar">
+            //     <div class="progress" style="width: ...%"></div>
+            //   </div>
+            //   <span>...%</span>
+            //   <img src="...">
+            // </div>
+
+            let card = document.createElement("div");
+            // We use className to apply your existing CSS
+            card.className = "case-card"; 
+
+            let p = document.createElement("p");
+            p.textContent = legalCase.title; // (textContent from Week 3)
+
+            let progressBar = document.createElement("div");
+            progressBar.className = "progress-bar";
+
+            let progress = document.createElement("div");
+            progress.className = "progress";
+            // Apply style using JS (from Week 1 notes)
+            progress.style.width = legalCase.progress + "%"; 
+
+            let span = document.createElement("span");
+            span.textContent = legalCase.progress + "%";
+
+            let img = document.createElement("img");
+            img.src = legalCase.avatarUrl;
+            img.alt = "Lawyer Avatar";
+
+            // 7. Append everything together (appendChild from Week 3)
+            progressBar.appendChild(progress); // Put progress div inside progress-bar div
+            
+            card.appendChild(p);
+            card.appendChild(progressBar);
+            card.appendChild(span);
+            card.appendChild(img);
+            
+            // Add the final, completed card to the grid
+            container.appendChild(card);
+        }
+    </script>
+
 </body>
 </html>
+

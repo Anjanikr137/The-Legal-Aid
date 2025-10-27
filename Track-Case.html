@@ -28,22 +28,49 @@
       <h2>Case Lookup</h2>
       <p>Enter your case details to track the current status and recent updates</p>
 
+      <!-- 
+        The <form> tag is not needed for this, but we can leave it.
+        The JavaScript will handle the button click.
+      -->
       <form>
         <div class="input-group">
           <label for="caseNumber">Case Number*</label>
-          <input type="text" id="caseNumber" placeholder="e.g. CASE-2024-001">
+          <!-- This ID "caseNumber" is used in our JavaScript -->
+          <input type="text" id="caseNumber" placeholder="e.g. CASE123">
         </div>
 
         <div class="input-group">
           <label for="courtName">Court Name*</label>
+          <!-- This field is not used by our JSON, but we leave it -->
           <input type="text" id="courtName" placeholder="e.g. Superior Court">
         </div>
 
-        <button type="submit" class="track-btn">🔍 Track Case</button>
+        <!-- 
+          CHANGE 1:
+          - Changed type="submit" to type="button". This stops the page
+            from refreshing when you click it.
+          - Added id="track-button" so our JavaScript can find it.
+        -->
+        <button type="button" id="track-button" class="track-btn">🔍 Track Case</button>
       </form>
+
+      <!-- 
+        CHANGE 2:
+        - Added this empty div. This is where our JavaScript
+          will put the case status results.
+      -->
+      <div id="result-div">
+          <!-- Results will appear here -->
+      </div>
     </section>
-   
+    
   </main>
+
+  <!-- 
+    CHANGE 3:
+    - Added the <script> tag here to link our new JavaScript file.
+  -->
+  <script src="assets/js/track-case.js"></script>
 
 </body>
 </html>

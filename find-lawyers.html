@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Lawyers - LegalAid Pro</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="assets/css/findlawyers.css">
+    <!-- Your CSS file is linked correctly -->
+    <link rel="stylesheet" href="assets/css/findlawyers.css">
 </head>
 <body>
 
@@ -28,7 +29,11 @@
 
     <!-- Page Title -->
     <section class="page-header">
-        <h1>Find Your Legal Expert</h1>
+        <!-- 
+            CHANGE 1: Added an id="page-title" to the h1 
+            so the JavaScript can find it (just like your class example)
+        -->
+        <h1 id="page-title">Find Your Legal Expert</h1>
         <p>Browse our directory of verified lawyers and legal advisors. Filter by specialization, location, and experience to find the perfect match for your case.</p>
     </section>
 
@@ -41,43 +46,15 @@
         <button class="filter-btn"><i class="fas fa-filter"></i> Filters</button>
     </section>
 
-    <!-- Lawyer Cards -->
-    <section class="lawyer-cards">
-        <!-- Card 1 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/80" alt="Lawyer">
-            <h3>Steve Anderson</h3>
-            <a href="#" class="specialization">Criminal Law</a>
-            <p>Experienced criminal defense attorney with a track record of successful cases.</p>
-            <p><i class="fas fa-location-dot"></i> New York, NY</p>
-            <p><i class="fas fa-star"></i> 4.9 (127 reviews)</p>
-            <p>Experience: 15 years</p>
-            <button class="hire-btn">Hire Now</button>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/80" alt="Lawyer">
-            <h3>Brian Shaw</h3>
-            <a href="#" class="specialization">Corporate Law</a>
-            <p>Corporate law specialist helping businesses navigate complex legal matters.</p>
-            <p><i class="fas fa-location-dot"></i> San Francisco, CA</p>
-            <p><i class="fas fa-star"></i> 4.8 (89 reviews)</p>
-            <p>Experience: 12 years</p>
-            <button class="hire-btn">Hire Now</button>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="card">
-            <img src="https://via.placeholder.com/80" alt="Lawyer">
-            <h3>Jon Moxley</h3>
-            <a href="#" class="specialization">Family Law</a>
-            <p>Compassionate family law attorney specializing in divorce and custody cases.</p>
-            <p><i class="fas fa-location-dot"></i> Los Angeles, CA</p>
-            <p><i class="fas fa-star"></i> 4.7 (156 reviews)</p>
-            <p>Experience: 8 years</p>
-            <button class="hire-btn">Hire Now</button>
-        </div>
+    <!-- 
+        CHANGE 2:
+        - I added an id="lawyer-list-container" to this section
+          so the JavaScript can add the cards here.
+        - I DELETED the 3 hard-coded <div class="card">...</div> 
+          because the JavaScript will create them for us now.
+    -->
+    <section class="lawyer-cards" id="lawyer-list-container">
+        <!-- Lawyer cards will be loaded here by JavaScript -->
     </section>
 
     <!-- Bottom Section -->
@@ -87,5 +64,11 @@
         <button class="submit-btn">Submit Your Case</button>
     </section>
 
+    <!-- 
+        CHANGE 3:
+        - I added this <script> tag at the very bottom.
+        - This links our new JavaScript file (from Step 2) to this HTML page.
+    -->
+    <script src="assets/javascript/find-lawyers.js"></script>
 </body>
 </html>

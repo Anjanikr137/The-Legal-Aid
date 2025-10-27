@@ -1,0 +1,41 @@
+{
+  "title": "Find Your Legal Expert",
+  "lawyers": [
+    {
+      "img": "https://media.istockphoto.com/id/1326920136/photo/shot-of-a-business-women-using-laptop-working-at-home-stock-photo.jpg?s=612x612&w=0&k=20&c=tDhOPNMfBUlZLy5titrUrOXfHVbhVosEoQveTwuuL1Y=",
+      "name": "Steve Anderson",
+      "specialization": "Criminal Law",
+      "description": "Experienced criminal defense attorney with a track record of successful cases.",
+      "location": "New York, NY",
+      "rating": "4.9 (127 reviews)",
+      "experience": "15 years"
+    },
+    {
+      "img": "https://media.istockphoto.com/id/1326920136/photo/shot-of-a-business-women-using-laptop-working-at-home-stock-photo.jpg?s=612x612&w=0&k=20&c=tDhOPNMfBUlZLy5titrUrOXfHVbhVosEoQveTwuuL1Y=",
+      "name": "Brian Shaw",
+      "specialization": "Corporate Law",
+      "description": "Corporate law specialist helping businesses navigate complex legal matters.",
+      "location": "San Francisco, CA",
+      "rating": "4.8 (89 reviews)",
+      "experience": "12 years"
+    },
+    {
+      "img": "https://media.istockphoto.com/id/1326920136/photo/shot-of-a-business-women-using-laptop-working-at-home-stock-photo.jpg?s=612x612&w=0&k=20&c=tDhOPNMfBUlZLy5titrUrOXfHVbhVosEoQveTwuuL1Y=",
+      "name": "Jon Moxley",
+      "specialization": "Family Law",
+      "description": "Compassionate family law attorney specializing in divorce and custody cases.",
+      "location": "Los Angeles, CA",
+      "rating": "4.7 (156 reviews)",
+      "experience": "8 years"
+    },
+    {
+      "img": "https://media.istockphoto.com/id/1326920136/photo/shot-of-a-business-women-using-laptop-working-at-home-stock-photo.jpg?s=612x612&w=0&k=20&c=tDhOPNMfBUlZLy5titrUrOXfHVbhVosEoQveTwuuL1Y=",
+      "name": "Sarah Chen",
+      "specialization": "Intellectual Property",
+      "description": "Protecting your creations and ideas.",
+      "location": "Austin, TX",
+      "rating": "4.9 (95 reviews)",
+      "experience": "10 years"
+    }
+  ]
+}

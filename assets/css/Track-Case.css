@@ -19,7 +19,7 @@ header {
 
 /* This styles the main logo container */
 .logo {
-    display: flex;         /* Aligns icon and text side-by-side */
+    display: flex;        /* Aligns icon and text side-by-side */
     align-items: center;   /* Vertically centers the icon and text */
     font-weight: bold;
     font-size: 20px;
@@ -109,3 +109,20 @@ input {
   background: #3b48d8;
 }
 
+/* NEW STYLE ADDED: This is for the result box
+  that our JavaScript will create.
+*/
+#result-div {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: left; /* Keep text aligned left */
+}
+
+/* This will make our error message red */
+#result-div p {
+    line-height: 1.6;
+    font-weight: bold;
+}
