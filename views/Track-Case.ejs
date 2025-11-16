@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>LegalAid Pro | <%= title %></title>
+
+<link rel="stylesheet" href="/css/Track-Case.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+  <header>
+      <div class="logo">
+          <i class="fa-solid fa-scale-balanced"></i>
+          <span>LegalAid Pro</span>
+      </div>
+      <a href="/views/home.ejs" class="back-home">← Back to home</a>
+  </header>
+
+  <main>
+    <h1>Track Your Case</h1>
+    <p class="subtitle">Enter your case number and court name to get real-time updates on your legal proceedings</p>
+
+    <section class="case-lookup">
+      <h2>Case Lookup</h2>
+      <p>Enter your case details to track the current status and recent updates</p>
+
+      
+      <form>
+        <div class="input-group">
+          <label for="caseNumber">Case Number*</label>
+          <input type="text" id="caseNumber" placeholder="e.g. CASE123">
+        </div>
+
+        <div class="input-group">
+          <label for="courtName">Court Name*</label>
+          <input type="text" id="courtName" placeholder="e.g. Superior Court">
+        </div>
+
+        
+        <button type="button" id="track-button" class="track-btn">🔍 Track Case</button>
+      </form>
+
+      
+      <div id="result-div">
+      </div>
+    </section>
+    
+  </main>
+
+  <script src="/assets/javascript/Track-Case.js" defer></script>
+</body>
+</html>

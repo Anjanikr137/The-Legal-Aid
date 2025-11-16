@@ -67,10 +67,9 @@ body {
     border-radius: 50%;
 }
 
-/* MAIN CONTENT LAYOUT (using CSS Grid) */
 .main-content {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* 2 parts for left column, 1 part for right */
+    grid-template-columns: 2fr 1fr; 
     gap: 30px;
 }
 

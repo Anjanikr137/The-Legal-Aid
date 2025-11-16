@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>LegalAid Pro | <%= title %></title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="/css/submit-case.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-scale-balanced"></i>
+            <span>LegalAid Pro</span>
+        </div>
+        <a href="/home" class="back-home">← Back to home</a>
+    </header>
+
+    <main class="submit-case-container">
+        <h1>Submit Your Legal Case</h1>
+        <p class="subtitle">Provide details about your legal issue and we'll connect you with qualified lawyers and advisors</p>
+
+        <form class="submit-case-form" action="/submit-case" method="POST" enctype="multipart/form-data">
+            
+            <section class="form-section">
+                <h3>Personal Information</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="full-name">Full Name*</label>
+                        <input type="text" id="full-name" name="fullName" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number*</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+ 91- 1234567890" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location*</label>
+                        <input type="text" id="location" name="location" placeholder="City & State" required>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h3>Case Details</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="case-type">Type of Case*</label>
+                        <select id="case-type" name="caseType" required>
+                            <option value="" disabled selected>Please select case type</option>
+                            <option value="family-law">Family Law</option>
+                            <option value="criminal-law">Criminal Law</option>
+                            <option value="business-law">Business Law</option>
+                            <option value="personal-injury">Personal Injury</option>
+                            <option value="real-estate">Real Estate Law</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="urgency">Urgency level*</label>
+                        <select id="urgency" name="urgency" required>
+                            <option value="" disabled selected>Select urgency</option>
+                            <option value="low">Low (General query)</option>
+                            <option value="medium">Medium (Need help soon)</option>
+                            <option value="high">High (Urgent)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="case-summary">Case Title / Summary*</label>
+                        <input type="text" id="case-summary" name="caseSummary" placeholder="Brief title describing your case" required>
+                    </div>
+                     <div class="form-group">
+                     </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group full-width">
+                        <label for="description">Detailed Description*</label>
+                        <textarea id="description" name="description" rows="6" placeholder="Please describe your legal issue in detail. Include relevant dates, parties involved, and any important background information......" required></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h3>Supporting Documents</h3>
+                <p>Upload any relevant documents (contracts, correspondence, court papers, etc.)</p>
+                <div class="drop-zone" id="drop-zone">
+                    <span class="drop-zone-text">Click to upload files</span> or drag and drop
+                    <input type="file" name="documents" id="file-input" multiple hidden>
+                </div>
+                <div class="file-list" id="file-list"></div>
+            </section>
+
+            <button type="submit" class="submit-btn">Submit Your case & find Lawyers</button>
+        </form>
+    </main>
+
+    <script src="/javascript/submit-case.js" defer></script>
+</body>
+</html>

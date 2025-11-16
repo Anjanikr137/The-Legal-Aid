@@ -1,0 +1,51 @@
+<%- include('partials/header') %>
+
+<section class="page-header">
+    <h1 id="page-title">Find Your Legal Expert</h1>
+    <p>Browse our directory of verified lawyers and legal advisors. Filter by specialization, location, and experience to find the perfect match for your case.</p>
+</section>
+
+<section class="search-filter">
+    <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search by name or specialization...">
+    </div>
+    <button class="filter-btn"><i class="fas fa-filter"></i> Filters</button>
+</section>
+
+<section class="lawyer-list">
+
+    <% lawyers.forEach(lawyer => { %>
+
+        <div class="lawyer-card">
+            <img src="<%= lawyer.img %>" alt="<%= lawyer.name %>" class="lawyer-image">
+            <div class="lawyer-info">
+                <h3><%= lawyer.name %></h3>
+                <span class="specialization"><%= lawyer.specialization %></span>
+                <div class="lawyer-details">
+                    <span class="rating">
+                        <i class="fas fa-star"></i> <%= lawyer.rating %>
+                    </span>
+                    <span class="experience">
+                        <i class="fas fa-briefcase"></i> <%= lawyer.experience %>
+                    </span>
+                    <span class="location">
+                        <i class="fas fa-map-marker-alt"></i> <%= lawyer.location %>
+                    </span>
+                </div>
+                <p class="description"><%= lawyer.description %></p>
+                <a href="#" class="btn-view-profile">View Profile</a>
+            </div>
+        </div>
+
+    <% }) %>
+
+</section>
+
+<section class="submit-case">
+    <h2>Can't find the right lawyer?</h2>
+    <p>Submit your case details and we'll match you with qualified lawyers who specialize in your specific legal needs.</p>
+    <a href="/submit-case" class="submit-btn">Submit Your Case</a>
+</section>
+
+<%- include('partials/footer') %>
