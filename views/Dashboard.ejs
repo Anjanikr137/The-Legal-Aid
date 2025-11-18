@@ -3,15 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>LegalAid Pro | <%= title %></title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
     <link rel="stylesheet" href="/css/Dashboard.css">
+    
+    <style>
+        .action-btn { border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 0.8rem; color: white; margin-left: 5px; }
+        .btn-meeting { background-color: #3b82f6; } /* Blue */
+        .btn-delete { background-color: #dc3545; }  /* Red */
+        .case-actions { display: flex; align-items: center; justify-content: space-between; margin-top: 15px;}
+        
+        /* Progress Bar Styles */
+        .progress-container { width: 100%; background-color: #e0e0e0; border-radius: 10px; margin-top: 10px; height: 8px; overflow: hidden; }
+        .progress-fill { height: 100%; background-color: #28a745; transition: width 0.5s ease; }
+        .progress-text { font-size: 0.75rem; color: #666; margin-top: 2px; display: block; }
+        
+        /* Avatar Stack Styling */
+        .avatar-stack { display: flex; margin-top: 10px; }
+        .avatar-stack img {
+            width: 30px; height: 30px; border-radius: 50%; border: 2px solid #fff;
+            margin-left: -10px; object-fit: cover;
+        }
+        .avatar-stack img:first-child { margin-left: 0; }
+    </style>
 </head>
 <body>
 
@@ -21,36 +36,66 @@
                 <i class="fa-solid fa-scale-balanced"></i>
                 <h1>LegalAid Pro</h1>
             </div>
-            <div class="user-profile">
-                <i class="fa-regular fa-bell"></i>
-                <div class="user-info">
-                    <span>John Smith</span>
-                    <img src="https://i.pravatar.cc/40?u=johnsmith" alt="User Avatar">
-                </div>
-            </div>
+            <a href="/home" style="text-decoration: none; color: #333; font-weight: bold;">← Log Out</a>
         </header>
 
         <main class="main-content">
             
             <div class="left-column">
                 <div class="greeting">
-                    <h2>Good Morning, John</h2>
+                    <h2>Hello, <%= typeof userEmail !== 'undefined' ? userEmail : 'User' %></h2>
                 </div>
 
                 <div class="main-card">
-                    <h3>Case Strategy Meeting</h3>
-                    <p>Starts in 3 hours</p>
-                    <div class="meeting-details">
-                        <span><i class="fa-solid fa-user"></i> with Emily Rodriguez</span>
-                        <span><i class="fa-solid fa-location-dot"></i> In-Person</span>
-                    </div>
-                    <button class="join-btn">Join Meeting</button>
+                    <h3>Case Overview</h3>
+                    <p>You have <strong><%= cases.length %></strong> active cases.</p>
+                    <a href="/submit-case"><button class="join-btn">Submit New Case</button></a>
                 </div>
 
                 <div class="cases-section">
-                    <h4>Active Cases</h4>
-                    
+                    <h4>Your Submitted Cases</h4>
                     <div class="cases-grid" id="cases-grid-container">
+                        
+                        <% if (cases.length > 0) { %>
+                            <% cases.forEach(c => { %>
+                                <div class="case-card">
+                                    <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 2px;">
+                                        <%= c.caseSummary %>
+                                    </p>
+
+                                    <p style="font-size: 0.85rem; color: #3b82f6; margin-bottom: 10px; display: flex; align-items: center; gap: 5px;">
+                                        <i class="fas fa-user-tie"></i> 
+                                        <span><%= c.assignedLawyer || 'Pending Assignment' %></span>
+                                    </p>
+
+                                    <span style="background: #e0f2fe; color: #0284c7; padding: 3px 8px; border-radius: 10px; font-size: 0.75rem;"><%= c.caseType %></span>
+
+                                    <div class="progress-container">
+                                        <div class="progress-fill" style="width: <%= c.progress %>%;"></div>
+                                    </div>
+                                    <span class="progress-text"><%= c.progress %>% Complete (<%= c.meetingsHeld %> Meetings)</span>
+
+                                    <div class="case-actions">
+                                        <% if (c.progress < 100) { %>
+                                            <form action="/add-meeting/<%= c._id %>" method="POST">
+                                                <button type="submit" class="action-btn btn-meeting">
+                                                    <i class="fas fa-handshake"></i> Meeting Done
+                                                </button>
+                                            </form>
+                                        <% } else { %>
+                                            <span style="color: green; font-weight: bold;">Resolved <i class="fas fa-check-circle"></i></span>
+                                        <% } %>
+
+                                        <form action="/delete-case/<%= c._id %>" method="POST">
+                                            <button type="submit" class="action-btn btn-delete"><i class="fas fa-trash"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
+                            <% }) %>
+                        <% } else { %>
+                            <p>No cases found. Submit one now!</p>
+                        <% } %>
+
                     </div>
                 </div>
             </div>
@@ -58,62 +103,22 @@
             <div class="right-column">
                 <div class="widgets-section">
                     <div class="widget">
-                        <i class="fa-regular fa-calendar-days icon-blue"></i>
-                        <div class="widget-info">
-                            <span class="widget-number">2</span>
-                            <span class="widget-label">Upcoming Meetings</span>
-                        </div>
-                        <i class="fa-solid fa-calendar-week icon-calendar"></i>
-                    </div>
-                    <div class="widget">
                         <i class="fa-solid fa-users icon-blue"></i>
                         <div class="widget-info">
-                            <span class="widget-number">3</span>
-                            <span class="widget-label">Hired Lawyers</span>
+                            <span class="widget-number"><%= lawyers.length %></span>
+                            <span class="widget-label">Verified Lawyers</span>
                         </div>
                         <div class="avatar-stack">
-                            <img src="https://i.pravatar.cc/24?u=lawyer1" alt="Avatar 1">
-                            <img src="https://i.pravatar.cc/24?u=lawyer2" alt="Avatar 2">
-                            <img src="https://i.pravatar.cc/24?u=lawyer3" alt="Avatar 3">
+                            <% lawyers.forEach(lawyer => { %>
+                                <img src="<%= lawyer.img %>" alt="<%= lawyer.name %>">
+                            <% }) %>
                         </div>
-                    </div>
-                    <div class="widget">
-                        <i class="fa-regular fa-file-lines icon-blue"></i>
-                        <div class="widget-info">
-                            <span class="widget-number">1</span>
-                            <span class="widget-label">Pending Documents</span>
-                        </div>
-                        <a href="#" class="widget-link">Review & Sign Contract.pdf</a>
-                    </div>
-                </div>
-
-                <div class="schedule-section">
-                    <div class="schedule-header">
-                        <h4>Full Schedule</h4>
-                        <button class="schedule-btn">+ Schedule</button>
-                    </div>
-                    <div class="appointment-item">
-                        <div class="date-tag">FEB 05</div>
-                        <div class="appointment-details">
-                            <p class="time">10:00 AM - Case Strategy Meeting</p>
-                            <p class="person">Michael Chen</p>
-                        </div>
-                        <button class="reschedule-btn">Reschedule</button>
-                    </div>
-                    <div class="appointment-item">
-                        <div class="date-tag">FEB 08</div>
-                        <div class="appointment-details">
-                            <p class="time">2:00 PM - Document Review Session</p>
-                            <p class="person">Michael Chen • Video Call</p>
-                        </div>
-                        <button class="reschedule-btn">Reschedule</button>
                     </div>
                 </div>
             </div>
         </main>
     </div>
-
-    <script src="/javascript/dashboard.js" defer></script>
-
+    
+    <script src="/javascript/dashboard.js"></script>
 </body>
 </html>

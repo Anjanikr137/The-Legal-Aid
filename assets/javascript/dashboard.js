@@ -11,9 +11,8 @@ class LegalCase {
 let case1 = new LegalCase("Johnson v. Acme Corp.", 60, "https://i.pravatar.cc/30?u=lawyer1");
 let case2 = new LegalCase("Smith v. DataCo", 30, "https://i.pravatar.cc/30?u=lawyer2");
 let case3 = new LegalCase("Rodriguez v. Hooli", 90, "https://i.pravatar.cc/30?u=lawyer3");
-let case4 = new LegalCase("Chen v. Stark Ind.", 20, "https://i.pravatar.cc/30?u=lawyer4");
 
-let case_array = [case1, case2, case3, case4];
+let case_array = [case1, case2, case3];
 
 let container = document.getElementById("cases-grid-container");
 
