@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const mongoose = require('mongoose');
-const cookieParser = require('cookie-parser'); // New package
+const cookieParser = require('cookie-parser'); 
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -11,8 +11,8 @@ const Case = require('./models/Case');
 const Lawyer = require('./models/Lawyer');
 
 mongoose.connect(process.env.MONGO_URI)
-    .then(() => console.log('✅ MongoDB Connected Successfully!'))
-    .catch(err => console.error('❌ MongoDB Connection Error:', err));
+    .then(() => console.log('MongoDB Connected Successfully!'))
+    .catch(err => console.error(' MongoDB Connection Error:', err));
 
 // --- Middleware ---
 app.set('view engine', 'ejs');
@@ -20,7 +20,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'assets')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cookieParser()); // Enable cookies
+app.use(cookieParser()); 
 
 // --- Page Routes ---
 app.get('/', (req, res) => res.render('index', { title: 'Welcome' }));
@@ -145,5 +145,5 @@ app.post('/delete-case/:id', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`\n🚀 LegalAid Pro server is running on http://localhost:${port}\n`);
+    console.log(`\n LegalAid Pro server is running on http://localhost:${port}\n`);
 });
