@@ -114,7 +114,68 @@ The-Legal-Aid/
 └── README.md # Project documentation
 ``` 
 ---
+# 🗄️ Database Schema
 
+LegalAid Pro uses MongoDB as its database to store users, lawyers, and case information.
+
+
+
+## 👤 User Schema
+
+```
+{
+name: String,
+email: String,
+password: String,
+role: String, // "client" or "lawyer"
+phone: String,
+address: String,
+createdAt: Date
+}
+
+```
+---
+
+## ⚖️ Lawyer Schema
+
+```
+{
+name: String,
+email: String,
+specialization: String,
+experience: Number,
+phone: String,
+address: String,
+verified: Boolean,
+createdAt: Date
+}
+
+```
+---
+
+## 📁 Case Schema
+
+```
+{
+title: String,
+description: String,
+clientId: ObjectId,
+lawyerId: ObjectId,
+status: String, // Pending, Active, Closed
+createdAt: Date,
+updatedAt: Date
+}
+
+```
+---
+
+## 🔗 Relationships
+```
+- One User (Client) can create multiple Cases
+- One Lawyer can handle multiple Cases
+- Each Case belongs to one Client and one Lawyer
+```
+---
 # ⚙️ Installation & Setup
 
 ## Prerequisites
